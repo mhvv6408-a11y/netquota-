@@ -1,4 +1,5 @@
 name: Build Debug APK
+
 on:
   push:
   workflow_dispatch:
@@ -18,11 +19,6 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          accept-android-sdk-licenses: false
 
       - name: Accept licenses
         run: yes | sdkmanager --licenses > /dev/null || true
